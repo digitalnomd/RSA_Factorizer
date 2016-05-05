@@ -7,10 +7,10 @@ Created on Thu May 05 13:02:37 2016
 Eric Forte
 5/5/2016
 CMSC 441
-Project 2 Part 2b
+Project 2 Part 2
 ---------------------------------------------------------------------------------------------------------
     How to run code:
-        python CMSC441Project2.py
+        python CMSC441Project2Part2.py
         
         NOTE: this file uses gmpy2 for python 2.7 and is required to run it
         It can be obtained from https://pypi.python.org/pypi/gmpy2
