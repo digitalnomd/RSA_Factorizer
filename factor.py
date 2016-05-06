@@ -5,6 +5,9 @@ from math import log
 from random import randrange
 from fractions import gcd
 
+#the following is a basic pollard rho implementation
+#based on the pseudocode for the algorithm in
+#the Introduction to Algorithms text by CLRS
 def pollard_rho(n):
 	i = 1
 	x1 = randrange(0, n - 1)
@@ -26,7 +29,6 @@ def pollard_rho(n):
 		x1 = x2
 
 def main():
-
 	n = int(eval(sys.argv[1]))
 	print n
 
