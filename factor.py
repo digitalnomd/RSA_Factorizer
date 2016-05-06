@@ -1,5 +1,10 @@
 #!/usr/bin/python
 
+#Authors: Robert Grossman 
+#	  Eric Forte
+#Class: CMSC441
+#Project 2 Part 2
+
 import sys
 from math import log
 from random import randrange
