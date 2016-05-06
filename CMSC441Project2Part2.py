@@ -110,14 +110,74 @@ def main():
     '''
     
     #Test80
-    TestNum = 118444866376306827062213   
-    print("PollardRho results")
-    pollardRho(TestNum)
-    print
+    #TestNum = 118444866376306827062213   
+    #print("PollardRho results")
+    #pollardRho(TestNum)
     #a known test number with answer of 135979
-    print("Pollard P-1 results")
+    #print("Pollard P-1 results")
     n =15770708441
     B = 180
-    test = PollardP_1(n,B)
+    #test = PollardP_1(n,B)
     
+    Rho = False
+    Minus = False    
+    
+    Default = True;
+    
+    if len(sys.argv) > 1 :
+        n = sys.argv[1]
+        Rho = True
+        Default = False
+    else:
+        print "NOT a valid Input"
+        
+    if len(sys.argv) > 2:
+        B = sys.argv[2]
+        Rho = False
+        Minus = True
+        Default = False
+    else:
+        print "NOT a valid Input"
+
+    
+    valid = False
+    #test to see if valid int 
+    try: 
+        int(n)
+        valid = True
+    except ValueError:
+        print "n not valid"
+ 
+    if(Minus):
+        try: 
+            int(B)
+            valid = True
+        except ValueError:
+            print "B not valid"
+            valid = False
+
+    if(valid == False or Default == True):
+        print("Input not valid using default test for both algorithms")
+        #Test80
+        TestNum = 118444866376306827062213
+        print("Test Number:")
+        print(TestNum)
+        print("PollardRho results")
+        pollardRho(TestNum)
+        print
+        #a known test number with answer of 135979
+        print("Pollard P-1 results")
+        print("N, B")
+        print(n, B)
+        n =15770708441
+        B = 180
+        test = PollardP_1(n,B)
+    if(Rho):
+        print("PollardRho results")
+        pollardRho(n)
+    if(Minus):
+        print("Pollard P-1 results")
+        test = PollardP_1(n,B)
+
+    return True  
 main()
