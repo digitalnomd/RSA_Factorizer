@@ -10,7 +10,14 @@ CMSC 441
 Project 2 Part 2
 ---------------------------------------------------------------------------------------------------------
     How to run code:
+        #for defaults
         python CMSC441Project2Part2.py
+        
+        #for specified PollardRho
+        python CMSC441Project2Part2.py n
+        
+        #for Pollard P -1 
+        python CMSC441Project2Part2.py n B
         
         NOTE: this file uses gmpy2 for python 2.7 and is required to run it
         It can be obtained from https://pypi.python.org/pypi/gmpy2
@@ -48,6 +55,8 @@ def PollardP_1(n, B):
     if( 1 < d and d < n):
         print("P-1 Factor")
         print(d)
+        print "And "
+        print n/d
         return d
     else:
         #print("Failure")
@@ -128,16 +137,14 @@ def main():
         n = sys.argv[1]
         Rho = True
         Default = False
-    else:
-        print "NOT a valid Input"
+
         
     if len(sys.argv) > 2:
         B = sys.argv[2]
         Rho = False
         Minus = True
         Default = False
-    else:
-        print "NOT a valid Input"
+
 
     
     valid = False
